@@ -20,4 +20,11 @@ jobs:
 
     - name: Test
       uses: echo "code is tested!"
-    
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: production-build       # The downloadable name of the zip file
+        path: dist/                  # The directory or file path you want to upload
+        retention-days: 7            # Optional: How long to keep it (default 90)
+        compression-level: 6        
