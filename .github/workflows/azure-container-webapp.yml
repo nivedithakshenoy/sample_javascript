@@ -1,0 +1,23 @@
+name: Secure DevSecOps Pipeline
+
+on:
+  push:
+    branches:
+      - master
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 : true
+
+jobs:
+  build_and_package:
+    name: BUILD-JOB
+    runs-on: ubuntu-slim
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Build the code
+      uses: npm ci
+
+    - name: Test
+      uses: echo "code is tested!"
+    
