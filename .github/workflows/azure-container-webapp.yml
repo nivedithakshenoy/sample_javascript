@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build the code
-      uses: npm ci
+      uses: npm install
 
     - name: Test
       uses: echo "code is tested!"
@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: production-build       # The downloadable name of the zip file
-        #path: ~/.npm                  # The directory or file path you want to upload
-        path: dist/
+        path: ~/.npm                  # The directory or file path you want to upload
+        #path: dist/
         retention-days: 7            # Optional: How long to keep it (default 90)
         compression-level: 6        
