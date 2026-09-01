@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+    
     - name: Set up Node.js 24
       uses: actions/setup-node@v4
       with:
@@ -21,10 +22,10 @@ jobs:
         cache: 'npm'
 
     - name: Build the code
-      uses: npm install
+      run: npm install
 
     - name: Test
-      uses: echo "code is tested!"
+      run: echo "code is tested!"
 
     - name: Artifact upload 
       uses: actions/upload-artifact@v7 
