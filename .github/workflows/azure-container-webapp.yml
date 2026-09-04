@@ -11,6 +11,15 @@ jobs:
   build_and_package:
     name: BUILD-JOB
     runs-on: ubuntu-slim
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+      
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript-typescript', 'python' ]
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
