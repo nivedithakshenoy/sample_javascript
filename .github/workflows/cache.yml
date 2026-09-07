@@ -1,5 +1,9 @@
 name: CI-WORKFLOW 
-on: push 
+on: 
+ push:
+   branches:
+     - master
+     - main
  
 jobs: 
   build-test: 
