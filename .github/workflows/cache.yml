@@ -2,11 +2,19 @@ name: CI-WORKFLOW
 on: push 
  
 jobs: 
-  buil-test: 
-    runs-on: ubuntu-22.04 
+  build-test: 
+    name: BUILD_JOB
+    if: github.ref == 'ref/heads/master' && github.event_name == 'push'
+    runs-on: ubuntu-slim
+
+    permissions:
+     actions: read
+     contents: read
+     security-events: write
+     
     steps: 
       - name: checkout 
-        uses: actions/checkout@v7 
+        uses: actions/checkout@v4
  
       - name: Cache Dependencies 
         uses: actions/cache@v5 
