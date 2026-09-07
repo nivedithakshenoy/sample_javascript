@@ -35,6 +35,15 @@ jobs:
           name: artifact-1 
           path: | 
              package* 
+
+      - name: deploy
+        run: echo "my code is deployed"
+        
+      - name: rollback
+        if: failure()
+        run: echo "rollback is done"
+        
+
  
  
       - name: deploy 
