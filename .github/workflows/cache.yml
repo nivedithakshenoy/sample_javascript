@@ -5,7 +5,7 @@ on:
 jobs: 
   build-test: 
     name: BUILD_JOB
-    if: github.ref == 'ref/heads/master' && github.event_name == 'push'
+   # if: github.ref == 'ref/heads/master' && github.event_name == 'push'
     runs-on: ubuntu-slim
 
     permissions:
